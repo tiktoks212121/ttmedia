@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TTMedia - Descarga sin marca de agua</title>
+  <title>TTMedia - Descarga videos de TikTok sin marca de agua</title>
+
+  <!-- 🌐 SEO: meta etiquetas -->
+  <meta name="description" content="Descarga videos de TikTok sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.">
+  <meta name="keywords" content="descargar tiktok sin marca de agua, descargar videos tiktok, ttmedia, tiktok downloader, videos tiktok gratis, sin marca de agua">
+  <meta name="author" content="Gerardo Suarez">
+  <meta property="og:title" content="TTMedia - Descarga videos sin marca de agua">
+  <meta property="og:description" content="Descarga videos de TikTok sin marca de agua gratis y en segundos. TTMedia es la forma más rápida y sencilla.">
+  <meta property="og:image" content="https://ttmedia.vercel.app/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ttmedia.vercel.app">
+  <link rel="icon" href="logo.png">
 
   <!-- Fuente moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
@@ -15,18 +26,18 @@
       font-family: 'Outfit', sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
       margin: 0;
+      padding: 0;
     }
 
     header {
       font-size: 2em;
       font-weight: 600;
-      margin-bottom: 40px;
+      margin: 40px 0 20px 0;
       color: #e50914;
       letter-spacing: 1px;
+      text-align: center;
     }
 
     main {
@@ -63,9 +74,7 @@
       transition: background 0.3s ease;
     }
 
-    button:hover {
-      background-color: #ff1a1a;
-    }
+    button:hover { background-color: #ff1a1a; }
 
     #status {
       margin-top: 20px;
@@ -82,10 +91,7 @@
       animation: spin 1s linear infinite;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     .download-link {
       display: block;
@@ -105,15 +111,34 @@
       transition: background 0.2s;
     }
 
-    .copy-btn:hover {
-      background-color: #444;
-    }
+    .copy-btn:hover { background-color: #444; }
 
     footer {
-      margin-top: 40px;
+      margin: 50px 0 30px 0;
       color: gray;
       font-size: 0.85em;
       text-align: center;
+    }
+
+    /* 📰 Sección informativa para SEO */
+    section.info {
+      background-color: #111;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 750px;
+      line-height: 1.6em;
+      text-align: left;
+      color: #ccc;
+    }
+
+    section.info h3 {
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+
+    section.info ol {
+      padding-left: 20px;
     }
   </style>
 </head>
@@ -131,7 +156,36 @@
     <p id="status"></p>
   </main>
 
-  <footer>© 2025 TTMedia - Creado por Gerardo</footer>
+  <!-- 📰 Contenido adicional para SEO -->
+  <section class="info">
+    <h3>¿Qué es TTMedia?</h3>
+    <p>
+      <strong>TTMedia</strong> es una herramienta gratuita en línea que permite descargar videos de TikTok sin marca de agua de forma rápida, segura y sin necesidad de instalar aplicaciones. 
+      Es ideal para creadores de contenido, editores y usuarios que desean guardar sus videos favoritos.
+    </p>
+
+    <h3>¿Cómo descargar videos de TikTok sin marca de agua?</h3>
+    <ol>
+      <li>Abre TikTok y copia el enlace del video que quieras descargar.</li>
+      <li>Pega el enlace en el cuadro de arriba.</li>
+      <li>Haz clic en <strong>“Descargar”</strong> y espera unos segundos.</li>
+      <li>Haz clic en el enlace verde para guardar el video sin marca de agua.</li>
+    </ol>
+
+    <h3>Ventajas de usar TTMedia</h3>
+    <ul>
+      <li>✅ Descargas sin marca de agua.</li>
+      <li>🚀 Velocidad de descarga instantánea.</li>
+      <li>📱 Compatible con celular, PC y tablet.</li>
+      <li>💸 100% gratis, sin registro.</li>
+    </ul>
+
+    <h3>Preguntas frecuentes</h3>
+    <p><strong>¿Funciona en todos los dispositivos?</strong><br>Sí, TTMedia funciona desde cualquier navegador (Google Chrome, Safari, Opera, Edge, etc.)</p>
+    <p><strong>¿Los videos se guardan en el servidor?</strong><br>No, las descargas son directas desde TikTok. No almacenamos ningún contenido.</p>
+  </section>
+
+  <footer>© 2025 TTMedia - Creado por Gerardo Suarez</footer>
 
   <script>
     document.getElementById('downloadBtn').addEventListener('click', async () => {
@@ -186,5 +240,3 @@
   </script>
 </body>
 </html>
-
-
