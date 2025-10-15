@@ -7,123 +7,275 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4121538816621592"
      crossorigin="anonymous"></script>
 
-  <!-- SEO meta -->
+  <!-- 🌐 SEO: meta etiquetas -->
   <meta name="description" content="Descarga videos de TikTok sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.">
   <meta name="keywords" content="descargar tiktok sin marca de agua, descargar videos tiktok, ttmedia, tiktok downloader, videos tiktok gratis, sin marca de agua">
   <meta name="author" content="Gerardo Suarez">
+  <meta property="og:title" content="TTMedia - Descarga videos sin marca de agua">
+  <meta property="og:description" content="Descarga videos de TikTok sin marca de agua gratis y en segundos. TTMedia es la forma más rápida y sencilla.">
+  <meta property="og:image" content="https://ttmedia.vercel.app/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ttmedia.vercel.app">
+  <link rel="icon" href="logo.png">
 
-  <!-- Fuente -->
+  <!-- Fuente moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body { background-color: #000; color: white; font-family: 'Outfit', sans-serif; display:flex; flex-direction:column; align-items:center; margin:0;}
-    header { font-size:2em; font-weight:600; margin:40px 0 20px 0; color:#e50914; letter-spacing:1px; text-align:center;}
-    main { text-align:center; background:#111; padding:40px; border-radius:20px; box-shadow:0 0 20px rgba(255,0,0,0.2); width:90%; max-width:450px;}
-    input { width:100%; padding:12px; border:none; border-radius:10px; margin-bottom:15px; font-size:1em; text-align:center; outline:none;}
-    button { width:100%; padding:12px; background:#e50914; border:none; border-radius:10px; color:white; font-size:1em; cursor:pointer; font-weight:600; transition:0.3s;}
-    button:hover { background:#ff1a1a; }
-    #status { margin-top:20px; font-size:0.95em; }
-    .loading { border:4px solid rgba(255,255,255,0.2); border-top:4px solid #e50914; border-radius:50%; width:35px; height:35px; margin:15px auto; animation:spin 1s linear infinite; }
-    @keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
-    .download-link { display:block; margin-top:10px; color:#0f0; font-weight:600; }
-    .copy-btn { background:#333; color:white; padding:8px 16px; border-radius:8px; margin-top:10px; cursor:pointer; font-size:0.9em; transition:0.2s; }
-    .copy-btn:hover { background:#444; }
-    footer { margin:50px 0 30px 0; color:gray; font-size:0.85em; text-align:center;}
-    section.info { background:#111; margin:60px auto; padding:30px; border-radius:15px; max-width:750px; line-height:1.6em; text-align:left; color:#ccc; }
-    section.info h3 { color:#e50914; margin-bottom:10px; }
-    section.info ol { padding-left:20px; }
+    body {
+      background-color: #000;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-sizing: border-box;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #e50914;
+    }
+
+    header .logo { font-size: 1.8em; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ff1a1a; }
+
+    main {
+      text-align: center;
+      background-color: #111;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+      width: 90%;
+      max-width: 450px;
+      margin-top: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 1em;
+      text-align: center;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #e50914;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    button:hover { background-color: #ff1a1a; }
+
+    .download-link {
+      display: block;
+      margin-top: 10px;
+      color: #0f0;
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      background-color: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover { background-color: #444; }
+
+    #status {
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+
+    .loading {
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top: 4px solid #e50914;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      margin: 15px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    footer {
+      margin: 50px 0 30px 0;
+      color: gray;
+      font-size: 0.85em;
+      text-align: center;
+    }
+
+    footer a { color: gray; text-decoration: none; margin: 0 5px; }
+    footer a:hover { color: #fff; }
+
+    section.info {
+      background-color: #111;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 750px;
+      line-height: 1.6em;
+      text-align: left;
+      color: #ccc;
+    }
+
+    section.info h3 { color: #e50914; margin-bottom: 10px; }
+    section.info ol { padding-left: 20px; }
+    section.info ul { padding-left: 20px; }
   </style>
 </head>
 <body>
 
-<header>TTMedia</header>
+  <!-- Menú Superior -->
+  <header>
+    <div class="logo">TTMedia</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="faq.html">FAQ</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad</a>
+    </nav>
+  </header>
 
-<main>
-  <h2>Descarga videos de TikTok sin marca de agua</h2>
-  <p style="color: gray; font-size:0.9em;">Pega el enlace del video aquí 👇</p>
-  <input type="text" id="url" placeholder="https://www.tiktok.com/@usuario/video/...">
-  <button id="downloadBtn">Descargar</button>
-  <div id="loading" class="loading" style="display:none;"></div>
-  <p id="status"></p>
-</main>
+  <!-- Main -->
+  <main>
+    <h2>Descarga videos de TikTok sin marca de agua</h2>
+    <p style="color: gray; font-size: 0.9em;">Pega el enlace del video aquí 👇</p>
 
-<section class="info">
-  <h3>¿Qué es TTMedia?</h3>
-  <p><strong>TTMedia</strong> es una herramienta gratuita que permite descargar videos de TikTok sin marca de agua de forma rápida, segura y sin necesidad de instalar aplicaciones.</p>
+    <input type="text" id="url" placeholder="https://www.tiktok.com/@usuario/video/...">
+    <button id="downloadBtn">Descargar</button>
 
-  <h3>¿Cómo descargar videos de TikTok sin marca de agua?</h3>
-  <ol>
-    <li>Abre TikTok y copia el enlace del video que quieras descargar.</li>
-    <li>Pega el enlace en el cuadro de arriba.</li>
-    <li>Haz clic en <strong>“Descargar”</strong> y espera unos segundos.</li>
-    <li>Haz clic en el enlace verde para guardar el video sin marca de agua.</li>
-  </ol>
+    <div id="loading" class="loading" style="display:none;"></div>
+    <p id="status"></p>
+  </main>
 
-  <h3>Ventajas de usar TTMedia</h3>
-  <ul>
-    <li>✅ Descargas sin marca de agua.</li>
-    <li>🚀 Velocidad de descarga instantánea.</li>
-    <li>📱 Compatible con celular, PC y tablet.</li>
-    <li>💸 100% gratis, sin registro.</li>
-  </ul>
-</section>
+  <!-- 📰 Contenido adicional para SEO -->
+  <section class="info">
+    <h3>¿Qué es TTMedia?</h3>
+    <p><strong>TTMedia</strong> es una herramienta gratuita en línea que permite descargar videos de TikTok sin marca de agua de forma rápida, segura y sin necesidad de instalar aplicaciones. Ideal para creadores de contenido, editores y usuarios que desean guardar sus videos favoritos.</p>
 
-<footer>© 2025 TTMedia - Creado por Gerardo Suarez</footer>
+    <h3>¿Cómo descargar videos de TikTok sin marca de agua?</h3>
+    <ol>
+      <li>Abre TikTok y copia el enlace del video que quieras descargar.</li>
+      <li>Pega el enlace en el cuadro de arriba.</li>
+      <li>Haz clic en <strong>“Descargar”</strong> y espera unos segundos.</li>
+      <li>Haz clic en el enlace verde para guardar el video sin marca de agua.</li>
+    </ol>
 
-<script>
-document.getElementById('downloadBtn').addEventListener('click', async () => {
-  const url = document.getElementById('url').value.trim();
-  const status = document.getElementById('status');
-  const loading = document.getElementById('loading');
+    <h3>Ventajas de usar TTMedia</h3>
+    <ul>
+      <li>✅ Descargas sin marca de agua.</li>
+      <li>🚀 Velocidad de descarga instantánea.</li>
+      <li>📱 Compatible con celular, PC y tablet.</li>
+      <li>💸 100% gratis, sin registro.</li>
+    </ul>
 
-  if (!url) {
-    status.style.color = "#ff3333";
-    status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
-    return;
-  }
+    <h3>Preguntas frecuentes</h3>
+    <p><strong>¿Funciona en todos los dispositivos?</strong><br>Sí, TTMedia funciona desde cualquier navegador (Google Chrome, Safari, Opera, Edge, etc.)</p>
+    <p><strong>¿Los videos se guardan en el servidor?</strong><br>No, las descargas son directas desde TikTok. No almacenamos ningún contenido.</p>
+  </section>
 
-  status.textContent = "Procesando el video... 🔄";
-  loading.style.display = "block";
+  <!-- Footer -->
+  <footer>
+    <a href="index.html">Inicio</a> |
+    <a href="tutorial.html">Tutorial</a> |
+    <a href="faq.html">FAQ</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="contacto.html">Contacto</a> |
+    <a href="privacidad.html">Privacidad</a>
+    <div style="margin-top:10px; color:gray;">© 2025 TTMedia - Creado por Gerardo Suarez</div>
+  </footer>
 
-  try {
-    // Llamada a tu API
-    const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`);
-    const data = await response.json();
-    loading.style.display = "none";
+  <!-- JS -->
+  <script>
+    const downloadBtn = document.getElementById('downloadBtn');
+    const status = document.getElementById('status');
+    const loading = document.getElementById('loading');
 
-    if (data.video && data.video.noWatermark) {
-      status.style.color = "#0f0";
-      status.innerHTML = "✅ Video listo para descargar.";
+    downloadBtn.addEventListener('click', async () => {
+      const url = document.getElementById('url').value.trim();
+      if (!url) {
+        status.style.color = "#ff3333";
+        status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
+        return;
+      }
 
-      const downloadLink = document.createElement("a");
-      downloadLink.href = data.video.noWatermark;
-      downloadLink.target = "_blank";
-      downloadLink.className = "download-link";
-      downloadLink.textContent = "Haz clic aquí para descargar";
-      status.appendChild(downloadLink);
+      loading.style.display = "block";
+      status.style.color = "#fff";
+      status.textContent = "Procesando el video... 🔄";
 
-      const copyBtn = document.createElement("button");
-      copyBtn.className = "copy-btn";
-      copyBtn.textContent = "📋 Copiar enlace";
-      copyBtn.onclick = () => {
-        navigator.clipboard.writeText(data.video.noWatermark);
-        copyBtn.textContent = "✅ Copiado!";
-        setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
-      };
-      status.appendChild(copyBtn);
+      try {
+        const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`);
+        const data = await response.json();
+        loading.style.display = "none";
 
-    } else {
-      status.style.color = "#ff3333";
-      status.textContent = "❌ No se pudo obtener el video. Verifica el enlace.";
-    }
+        if (data.video) {
+          status.style.color = "#0f0";
+          status.innerHTML = "✅ Video listo para descargar.";
 
-  } catch (error) {
-    loading.style.display = "none";
-    status.style.color = "#ff3333";
-    status.textContent = "⚠️ Error al conectar con el servidor.";
-  }
-});
-</script>
+          const downloadLink = document.createElement("a");
+          downloadLink.href = data.video;
+          downloadLink.target = "_blank";
+          downloadLink.className = "download-link";
+          downloadLink.textContent = "Haz clic aquí para descargar";
+
+          const copyBtn = document.createElement("button");
+          copyBtn.className = "copy-btn";
+          copyBtn.textContent = "📋 Copiar enlace";
+          copyBtn.onclick = () => {
+            navigator.clipboard.writeText(data.video);
+            copyBtn.textContent = "✅ Copiado!";
+            setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
+          };
+
+          status.appendChild(downloadLink);
+          status.appendChild(copyBtn);
+        } else {
+          status.style.color = "#ff3333";
+          status.textContent = "❌ No se pudo obtener el video. Verifica el enlace.";
+        }
+      } catch (error) {
+        loading.style.display = "none";
+        status.style.color = "#ff3333";
+        status.textContent = "⚠️ Error al conectar con el servidor.";
+      }
+    });
+  </script>
 
 </body>
 </html>
