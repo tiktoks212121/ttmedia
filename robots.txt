@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ttmedia.vercel.app/sitemap.xml
