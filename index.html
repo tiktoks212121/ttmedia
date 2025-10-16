@@ -130,17 +130,18 @@ button {
   text-align: center;
   box-sizing: border-box;
   
-  /* Brillo y sombra suave */
-  box-shadow: 0 0 5px #ff1a1a, 0 0 15px #e50914, 0 0 25px #ff4c4c;
+  /* Brillo más suave */
+  box-shadow: 0 0 3px #ff1a1a, 0 0 8px #e50914, 0 0 12px #ff4c4c;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  /* Intensifica el brillo y un ligero movimiento */
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff1a1a, 0 0 30px #ff4c4c, 0 0 45px #ff6b6b;
+  transform: scale(1.03);
+  /* Brillo más sutil al pasar el mouse */
+  box-shadow: 0 0 8px #ff1a1a, 0 0 15px #ff4c4c, 0 0 20px #ff6b6b;
   background: linear-gradient(145deg, #ff1a1a, #ff4c4c);
 }
+
 
     .download-link {
       display: block;
@@ -392,6 +393,7 @@ downloadBtn.addEventListener('click', async () => {
 
 </body>
 </html>
+
 
 
 
