@@ -120,21 +120,26 @@ button {
   width: 100%;
   max-width: 100%;
   padding: 12px;
-  background-color: #e50914;
+  background: linear-gradient(145deg, #e50914, #ff1a1a);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: white;
   font-size: 1em;
-  cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s;
+  cursor: pointer;
   text-align: center;
   box-sizing: border-box;
+  
+  /* Brillo y sombra suave */
+  box-shadow: 0 0 5px #ff1a1a, 0 0 15px #e50914, 0 0 25px #ff4c4c;
+  transition: all 0.3s ease;
 }
 
-button:hover { 
-  background-color: #ff1a1a; 
-  transform: scale(1.02); /* pequeño efecto hover */
+button:hover {
+  /* Intensifica el brillo y un ligero movimiento */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff1a1a, 0 0 30px #ff4c4c, 0 0 45px #ff6b6b;
+  background: linear-gradient(145deg, #ff1a1a, #ff4c4c);
 }
 
     .download-link {
@@ -387,6 +392,7 @@ downloadBtn.addEventListener('click', async () => {
 
 </body>
 </html>
+
 
 
 
