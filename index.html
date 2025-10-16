@@ -7,29 +7,29 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4121538816621592"
      crossorigin="anonymous"></script>
 
-  <!-- 🌐 SEO: meta etiquetas -->
+  <!-- 🌐 SEO -->
   <meta name="description" content="Descarga videos de TikTok sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.">
   <meta name="keywords" content="descargar tiktok sin marca de agua, descargar videos tiktok, ttmedia, tiktok downloader, videos tiktok gratis, sin marca de agua">
   <meta name="author" content="Gerardo Suarez">
 
-  <!-- 🧠 Open Graph -->
+  <!-- Open Graph -->
   <meta property="og:title" content="TTMedia - Descarga videos sin marca de agua">
   <meta property="og:description" content="Descarga videos de TikTok sin marca de agua gratis y en segundos. TTMedia es la forma más rápida y sencilla.">
   <meta property="og:image" content="https://ttmedia.vercel.app/logo.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ttmedia.vercel.app">
 
-  <!-- 🐦 Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TTMedia - Descarga videos sin marca de agua">
   <meta name="twitter:description" content="Descarga videos de TikTok sin marca de agua en segundos. Gratis, rápido y sin apps.">
   <meta name="twitter:image" content="https://ttmedia.vercel.app/logo.png">
 
-  <!-- 💾 Favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
 
-  <!-- 📘 Datos estructurados -->
+  <!-- Datos estructurados -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,10 +82,13 @@
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      transition: color 0.3s;
+      transition: color 0.3s, text-shadow 0.3s;
     }
 
-    nav a:hover { color: #ff1a1a; }
+    nav a:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0aa;
+    }
 
     main {
       text-align: center;
@@ -107,6 +110,12 @@
       font-size: 1em;
       text-align: center;
       outline: none;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 15px #0ff;
+      transform: scale(1.02);
     }
 
     input.error {
@@ -132,7 +141,7 @@
       font-size: 1em;
       cursor: pointer;
       font-weight: 600;
-      transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
+      transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s;
     }
 
     button:hover {
@@ -146,6 +155,12 @@
       margin-top: 10px;
       color: #0f0;
       font-weight: 600;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .download-link:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0aa;
     }
 
     .copy-btn {
@@ -156,13 +171,13 @@
       margin-top: 10px;
       cursor: pointer;
       font-size: 0.9em;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.3s;
     }
 
     .copy-btn:hover {
-      background-color: #444;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(0,255,255,0.7);
+      background: linear-gradient(45deg, #0ff, #0aa);
     }
 
     #status {
@@ -192,8 +207,17 @@
       text-align: center;
     }
 
-    footer a { color: gray; text-decoration: none; margin: 0 5px; }
-    footer a:hover { color: #fff; }
+    footer a {
+      color: gray;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    footer a:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0aa;
+    }
 
     section.info {
       background-color: #111;
@@ -232,7 +256,6 @@
       opacity: 1;
       pointer-events: auto;
     }
-
   </style>
 </head>
 <body>
@@ -302,61 +325,82 @@
   <!-- JS -->
   <script>
     const downloadBtn = document.getElementById('downloadBtn');
-    const status = document.getElementById('status');
-    const loading = document.getElementById('loading');
+const status = document.getElementById('status');
+const loading = document.getElementById('loading');
 
-    downloadBtn.addEventListener('click', async () => {
-      const url = document.getElementById('url').value.trim();
-      if (!url) {
-        status.style.color = "#ff3333";
-        status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
-        return;
-      }
+// Función para mostrar toast
+function showToast(message, success = true) {
+  let toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 100);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => document.body.removeChild(toast), 500);
+  }, 2000);
+}
 
-      loading.style.display = "block";
-      status.style.color = "#fff";
-      status.textContent = "Procesando el video... 🔄";
+// Botón Descargar
+downloadBtn.addEventListener('click', async () => {
+  const url = document.getElementById('url').value.trim();
+  if (!url) {
+    status.style.color = "#ff3333";
+    status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
+    document.getElementById('url').classList.add('error');
+    setTimeout(() => document.getElementById('url').classList.remove('error'), 300);
+    return;
+  }
 
-      try {
-        const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`);
-        const data = await response.json();
-        loading.style.display = "none";
+  loading.style.display = "block";
+  status.style.color = "#fff";
+  status.textContent = "Procesando el video... 🔄";
 
-        if (data.video) {
-          status.style.color = "#0f0";
-          status.innerHTML = "✅ Video listo para descargar.";
+  try {
+    const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`);
+    const data = await response.json();
+    loading.style.display = "none";
 
-          const downloadLink = document.createElement("a");
-          downloadLink.href = data.video;
-          downloadLink.target = "_blank";
-          downloadLink.className = "download-link";
-          downloadLink.textContent = "Haz clic aquí para descargar";
+    if (data.video) {
+      status.style.color = "#0f0";
+      status.innerHTML = "✅ Video listo para descargar.";
 
-          const copyBtn = document.createElement("button");
-          copyBtn.className = "copy-btn";
-          copyBtn.textContent = "📋 Copiar enlace";
-          copyBtn.onclick = () => {
-            navigator.clipboard.writeText(data.video);
-            copyBtn.textContent = "✅ Copiado!";
-            setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
-          };
+      const downloadLink = document.createElement("a");
+      downloadLink.href = data.video;
+      downloadLink.target = "_blank";
+      downloadLink.className = "download-link";
+      downloadLink.textContent = "Haz clic aquí para descargar";
 
-          status.appendChild(downloadLink);
-          status.appendChild(copyBtn);
-        } else {
-          status.style.color = "#ff3333";
-          status.textContent = "❌ No se pudo obtener el video. Verifica el enlace.";
-        }
-      } catch (error) {
-        loading.style.display = "none";
-        status.style.color = "#ff3333";
-        status.textContent = "⚠️ Error al conectar con el servidor.";
-      }
-    });
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "copy-btn";
+      copyBtn.textContent = "📋 Copiar enlace";
+      copyBtn.onclick = () => {
+        navigator.clipboard.writeText(data.video);
+        copyBtn.textContent = "✅ Copiado!";
+        copyBtn.style.transform = 'scale(1.2)';
+        setTimeout(() => copyBtn.style.transform = 'scale(1)', 200);
+        showToast('✅ Enlace copiado!');
+        setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
+      };
+
+      status.appendChild(downloadLink);
+      status.appendChild(copyBtn);
+    } else {
+      status.style.color = "#ff3333";
+      status.textContent = "❌ No se pudo obtener el video. Verifica el enlace.";
+    }
+  } catch (error) {
+    loading.style.display = "none";
+    status.style.color = "#ff3333";
+    status.textContent = "⚠️ Error al conectar con el servidor.";
+  }
+});
+
   </script>
 
 </body>
 </html>
+
 
 
 
