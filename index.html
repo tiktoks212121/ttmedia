@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +12,24 @@
   <meta name="keywords" content="descargar tiktok sin marca de agua, descargar videos tiktok, ttmedia, tiktok downloader, videos tiktok gratis, sin marca de agua">
   <meta name="author" content="Gerardo Suarez">
 
-  <!-- 🧠 Open Graph (para Google, WhatsApp, Facebook, etc.) -->
+  <!-- 🧠 Open Graph -->
   <meta property="og:title" content="TTMedia - Descarga videos sin marca de agua">
   <meta property="og:description" content="Descarga videos de TikTok sin marca de agua gratis y en segundos. TTMedia es la forma más rápida y sencilla.">
   <meta property="og:image" content="https://ttmedia.vercel.app/logo.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ttmedia.vercel.app">
 
-  <!-- 🐦 Twitter Card (para vista previa en X/Twitter) -->
+  <!-- 🐦 Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TTMedia - Descarga videos sin marca de agua">
   <meta name="twitter:description" content="Descarga videos de TikTok sin marca de agua en segundos. Gratis, rápido y sin apps.">
   <meta name="twitter:image" content="https://ttmedia.vercel.app/logo.png">
 
-  <!-- 💾 Favicon (logo del navegador y resultados de Google) -->
+  <!-- 💾 Favicon -->
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
 
-  <!-- 📘 Datos estructurados para que Google relacione tu logo con el sitio -->
+  <!-- 📘 Datos estructurados -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +44,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-
     body {
       background-color: #000;
       color: white;
@@ -67,7 +68,15 @@
       color: #e50914;
     }
 
-    header .logo { font-size: 1.8em; }
+    header .logo {
+      font-size: 1.8em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff1a1a; }
+      to { text-shadow: 0 0 20px #e50914; }
+    }
 
     nav a {
       color: white;
@@ -100,6 +109,19 @@
       outline: none;
     }
 
+    input.error {
+      animation: shake 0.3s;
+      border: 2px solid #ff3333;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
     button {
       width: 100%;
       padding: 12px;
@@ -110,10 +132,14 @@
       font-size: 1em;
       cursor: pointer;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s;
     }
 
-    button:hover { background-color: #ff1a1a; }
+    button:hover {
+      background: linear-gradient(45deg, #e50914, #ff1a1a);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,0,0,0.5);
+    }
 
     .download-link {
       display: block;
@@ -130,10 +156,14 @@
       margin-top: 10px;
       cursor: pointer;
       font-size: 0.9em;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .copy-btn:hover { background-color: #444; }
+    .copy-btn:hover {
+      background-color: #444;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
 
     #status {
       margin-top: 20px;
@@ -142,7 +172,10 @@
 
     .loading {
       border: 4px solid rgba(255,255,255,0.2);
-      border-top: 4px solid #e50914;
+      border-top: 4px solid #ff1a1a;
+      border-right: 4px solid #e50914;
+      border-bottom: 4px solid #ff1a1a;
+      border-left: 4px solid rgba(255,0,0,0.2);
       border-radius: 50%;
       width: 35px;
       height: 35px;
@@ -176,6 +209,30 @@
     section.info h3 { color: #e50914; margin-bottom: 10px; }
     section.info ol { padding-left: 20px; }
     section.info ul { padding-left: 20px; }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f0;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(0,255,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
   </style>
 </head>
 <body>
@@ -300,5 +357,6 @@
 
 </body>
 </html>
+
 
 
