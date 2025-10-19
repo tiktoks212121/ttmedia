@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ttmedia.vercel.app/">
-  <meta property="og:title" content="TTMedia - Descarga videos sin marca de agua">
+  <meta property="og:title" content="TTMedia - Descarga videos de TikTok sin marca de agua">
   <meta property="og:description" content="Descarga fácilmente videos de TikTok sin marca de agua desde PC o celular. Rápido, gratis y sin registro.">
   <meta property="og:image" content="https://ttmedia.vercel.app/ttmedia-preview.png">
   <meta property="og:locale" content="es_ES">
@@ -44,7 +44,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://ttmedia.vercel.app/">
-  <meta name="twitter:title" content="TTMedia - Descarga videos sin marca de agua">
+  <meta name="twitter:title" content="TTMedia - Descarga videos de TikTok sin marca de agua">
   <meta name="twitter:description" content="Descarga fácilmente videos de TikTok sin marca de agua desde PC o celular.">
   <meta name="twitter:image" content="https://ttmedia.vercel.app/ttmedia-preview.png">
 
@@ -192,11 +192,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 0 8px rgba(255,50,50,0.06);
     }
 
-    /* Botón principal: brillo suave + pulso en hover */
-    .cta {
+    button {
       width: 100%;
       max-width: 100%;
-      padding: 12px 14px;
+      padding: 12px;
       background: linear-gradient(145deg, var(--accent), var(--accent-2));
       border: none;
       border-radius: 12px;
@@ -206,33 +205,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       cursor: pointer;
       text-align: center;
       box-sizing: border-box;
-      box-shadow: 0 0 4px var(--accent-2), 0 0 10px var(--accent), 0 0 18px #ff4c4c;
-      transition: transform .18s ease, box-shadow .28s ease, background .28s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      box-shadow: 0 0 3px var(--accent-2), 0 0 8px var(--accent), 0 0 12px #ff4c4c;
+      transition: all 0.3s ease;
     }
 
-    .cta:focus { outline: 3px solid rgba(255,20,20,0.12); }
-
-    .cta:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 10px var(--accent-2), 0 0 22px #ff4c4c, 0 0 36px rgba(255,80,80,0.18);
-    }
-
-    /* pequeño pulso animado dentro del botón (sutileza) */
-    .cta .pulse {
-      display:inline-block;
-      width:10px;height:10px;border-radius:50%;
-      background: rgba(255,255,255,0.14);
-      box-shadow: 0 0 8px rgba(255,0,0,0.12);
-      animation: innerPulse 2s infinite ease-in-out;
-    }
-    @keyframes innerPulse {
-      0% { transform: scale(0.9); opacity: 0.9; }
-      50% { transform: scale(1.2); opacity: 0.6; }
-      100% { transform: scale(0.9); opacity: 0.9; }
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 8px var(--accent-2), 0 0 15px #ff4c4c, 0 0 20px #ff6b6b;
+      background: linear-gradient(145deg, #ff1a1a, #ff4c4c);
     }
 
     .download-link {
@@ -271,32 +251,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #status {
       margin-top: 20px;
       font-size: 0.95em;
-      color: #ccc;
-      min-height: 24px;
-      text-align: center;
     }
 
-    /* Animación spinner circular */
     .loading {
-      border: 4px solid rgba(255,255,255,0.06);
+      border: 4px solid rgba(255,255,255,0.08);
       border-top: 4px solid var(--accent-2);
       border-right: 4px solid var(--accent);
       border-bottom: 4px solid var(--accent-2);
       border-left: 4px solid rgba(255,0,0,0.06);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      margin: 12px auto;
+      width: 35px;
+      height: 35px;
+      margin: 15px auto;
       animation: spin 1s linear infinite;
     }
+
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-    /* estados tipo step (texto pequeño) */
-    .step {
-      font-size: 0.9em;
-      color: #bbb;
-      margin-top: 8px;
+    footer {
+      margin: 50px 0 30px 0;
+      color: var(--muted);
+      font-size: 0.85em;
+      text-align: center;
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 10px 20px;
+      box-sizing: border-box;
     }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa;
+    }
+
+    section.info {
+      background-color: var(--panel);
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: var(--max-width);
+      line-height: 1.6em;
+      text-align: left;
+      color: #ccc;
+      box-sizing: border-box;
+    }
+
+    section.info h3 { color: var(--accent); margin-bottom: 10px; }
+    section.info ol { padding-left: 20px; }
+    section.info ul { padding-left: 20px; }
 
     /* Toast notification */
     .toast {
@@ -327,10 +336,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       header { padding: 20px 60px; }
       nav a { margin-left: 28px; }
     }
-    @media (max-width: 600px){
-      main { padding: 22px 14px; border-radius: 14px; }
-      .cta { padding: 12px; font-size: 0.95em; }
-    }
   </style>
 </head>
 <body>
@@ -356,18 +361,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p style="color: gray; font-size: 0.9em;">Pega el enlace del video aquí 👇</p>
 
     <!-- Etiqueta visible para accesibilidad -->
-    <label for="url" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">Enlace del video</label>
-    <input type="text" id="url" placeholder="https://www.tiktok.com/@usuario/video/... o https://www.facebook.com/... " aria-label="URL del video">
-    
-    <!-- Botón único: detecta TikTok o Facebook -->
-    <button id="downloadBtn" class="cta" aria-live="polite" aria-controls="status">
-      <span class="pulse" aria-hidden="true"></span>
-      <span id="btnLabel">Descargar</span>
-    </button>
+    <label for="url" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">Enlace del video de TikTok</label>
+    <input type="text" id="url" placeholder="https://www.tiktok.com/@usuario/video/..." aria-label="URL del video de TikTok">
+    <button id="downloadBtn" aria-live="polite" aria-controls="status">Descargar</button>
 
-    <!-- estado y spinner -->
     <div id="loading" class="loading" style="display:none;" role="status" aria-hidden="true" aria-label="Cargando"></div>
-    <div id="status" aria-live="polite" role="status"></div>
+    <p id="status" aria-live="polite" role="status"></p>
   </main>
 
   <!-- 📰 Contenido adicional para SEO -->
@@ -393,7 +392,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <h3>Preguntas frecuentes</h3>
     <p><strong>¿Funciona en todos los dispositivos?</strong><br>Sí, TTMedia funciona desde cualquier navegador (Google Chrome, Safari, Opera, Edge, etc.)</p>
-    <p><strong>¿Los videos se guardan en el servidor?</strong><br>No, las descargas son directas desde los orígenes. No almacenamos contenido.</p>
+    <p><strong>¿Los videos se guardan en el servidor?</strong><br>No, las descargas son directas desde TikTok. No almacenamos ningún contenido.</p>
   </section>
 
   <!-- Footer -->
@@ -407,55 +406,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div style="margin-top:10px; color:gray;">© 2025 TTMedia - Creado por Gerardo Suarez</div>
   </footer>
 
-  <!-- JS: mantuve tu lógica y añadí detección/autodetect + mejoras UX -->
+  <!-- JS -->
   <script>
     const downloadBtn = document.getElementById('downloadBtn');
     const status = document.getElementById('status');
     const loading = document.getElementById('loading');
     const urlInput = document.getElementById('url');
-    const btnLabel = document.getElementById('btnLabel');
 
-    // --- Funciones de utilidad ---
-    function showToast(message, ok = true) {
-      const toast = document.createElement('div');
+    // Función para mostrar toast
+    function showToast(message, success = true) {
+      let toast = document.createElement('div');
       toast.className = 'toast';
       toast.textContent = message;
       document.body.appendChild(toast);
-      setTimeout(()=> toast.classList.add('show'), 50);
-      setTimeout(()=> {
+      // For accessibility, set role and aria-live
+      toast.setAttribute('role','status');
+      toast.setAttribute('aria-live','polite');
+
+      setTimeout(() => toast.classList.add('show'), 100);
+      setTimeout(() => {
         toast.classList.remove('show');
-        setTimeout(()=> toast.remove(), 400);
-      }, 2600);
+        setTimeout(() => {
+          if (toast && toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 500);
+      }, 2500);
     }
 
-    function setLoading(on, message = '') {
-      if (on) {
-        loading.style.display = 'block';
-        loading.setAttribute('aria-hidden','false');
-        status.innerHTML = `<div class="step">${message}</div>`;
-      } else {
-        loading.style.display = 'none';
-        loading.setAttribute('aria-hidden','true');
+    // Validación simple de URL TikTok
+    function isValidTikTokUrl(u) {
+      try {
+        const parsed = new URL(u);
+        // dominio TikTok principal y variantes
+        const host = parsed.hostname.toLowerCase();
+        return host.includes('tiktok.com') || host.includes('v.douyin.com') || host.includes('vm.tiktok.com');
+      } catch(e) {
+        return false;
       }
     }
 
-    function isTikTokUrl(u) {
-      try {
-        const parsed = new URL(u);
-        const h = parsed.hostname.toLowerCase();
-        return h.includes('tiktok.com') || h.includes('vm.tiktok.com') || h.includes('v.douyin.com');
-      } catch(e) { return false; }
-    }
-
-    function isFacebookUrl(u) {
-      try {
-        const parsed = new URL(u);
-        const h = parsed.hostname.toLowerCase();
-        return h.includes('facebook.com') || h.includes('fb.watch') || h.includes('m.facebook.com') || h.includes('video.fc2.com');
-      } catch(e) { return false; }
-    }
-
-    // manejar Enter
+    // Manejar Enter en el input
     urlInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -463,220 +452,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     });
 
-    // Mensajes de progreso en "steps" para mejorar UX
-    async function showProgressSteps(steps = [], callback) {
-      for (let i = 0; i < steps.length; i++) {
-        setLoading(true, steps[i]);
-        // espera entre pasos para dar sensación de progreso (pero corta si callback ya terminó)
-        await new Promise(r => setTimeout(r, 700));
-      }
-      // dejar loading activo: caller decide cuando apagarlo
-    }
-
-    // --- Lógica principal: detecta la plataforma y llama al endpoint correcto ---
+    // Botón Descargar
     downloadBtn.addEventListener('click', async () => {
       const url = urlInput.value.trim();
+      // Resetear estado UI
       status.innerHTML = '';
       urlInput.classList.remove('error');
 
       if (!url) {
         status.style.color = "#ff3333";
-        status.textContent = "⚠️ Ingresa un enlace válido.";
+        status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
         urlInput.classList.add('error');
         showToast('Ingresa un enlace válido');
         return;
       }
 
-      // Detectar plataforma
-      const isTT = isTikTokUrl(url);
-      const isFB = isFacebookUrl(url);
-
-      if (!isTT && !isFB) {
+      if (!isValidTikTokUrl(url)) {
         status.style.color = "#ff3333";
-        status.textContent = "⚠️ Enlace no reconocido. Usa un enlace de TikTok o Facebook.";
+        status.textContent = "⚠️ Parece que no es una URL de TikTok. Verifica el enlace.";
         urlInput.classList.add('error');
-        showToast('Enlace no reconocido', false);
+        showToast('URL no válida');
         return;
       }
 
-      // Cambiar label del botón temporalmente y mostrar pasos
-      btnLabel.textContent = 'Procesando...';
-      downloadBtn.disabled = true;
+      loading.style.display = "block";
+      loading.setAttribute('aria-hidden','false');
+      status.style.color = "#fff";
+      status.textContent = "Procesando el video... 🔄";
 
       try {
-        // pasos descriptivos para el usuario
-        const steps = [
-          'Verificando enlace...',
-          'Conectando con el servicio externo...',
-          'Analizando el video...',
-        ];
-        // lanzar en background (no bloquear): se mostrarán mientras la fetch ocurre
-        showProgressSteps(steps);
+        // Llamada al backend (mantener la ruta que ya usas)
+        const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          },
+          // no-cache para intentar obtener datos frescos
+          cache: 'no-store'
+        });
 
-        if (isTT) {
-          // Llamada a tu backend si la tienes; si no, uso alternativa pública (ejemplo)
-          // Preferimos llamar a /api/download (tu backend) si existe porque ya lo tenías.
-          // Intentamos tu backend primero, si falla, intentamos un API externa.
-          let finalData = null;
-          // 1) Intentar backend propio
-          try {
-            const resp = await fetch(`/api/download?url=${encodeURIComponent(url)}`, { method: 'GET', cache: 'no-store' });
-            const ct = resp.headers.get('content-type') || '';
-            if (ct.includes('application/json')) {
-              const j = await resp.json();
-              if (j?.video) finalData = { source: 'backend', url: j.video };
-            } else {
-              // si la respuesta no es JSON, no asumimos éxito
-            }
-          } catch(e){
-            // backend pudo fallar, no romper
-            console.warn('Backend /api/download fallo o no devolvio JSON, probando alternativa externa', e);
-          }
+        // mejorar manejo de respuesta no-JSON
+        const contentType = response.headers.get('content-type') || '';
+        let data;
+        if (contentType.includes('application/json')) {
+          data = await response.json();
+        } else {
+          // si no es JSON, tratar como texto para mostrar posible error
+          const txt = await response.text();
+          throw new Error('Respuesta inesperada del servidor: ' + txt);
+        }
 
-          // 2) Si no hay finalData, intentar API externa (fallback)
-          if (!finalData) {
+        loading.style.display = "none";
+        loading.setAttribute('aria-hidden','true');
+
+        if (data?.video) {
+          status.style.color = "#0f0";
+          status.innerHTML = "✅ Video listo para descargar.";
+
+          // Enlace de descarga
+          const downloadLink = document.createElement("a");
+          downloadLink.href = data.video;
+          downloadLink.target = "_blank";
+          downloadLink.rel = "noopener noreferrer";
+          downloadLink.className = "download-link";
+          downloadLink.textContent = "Haz clic aquí para descargar";
+          downloadLink.setAttribute('aria-label','Enlace para descargar el video sin marca de agua');
+
+          // Botón copiar
+          const copyBtn = document.createElement("button");
+          copyBtn.className = "copy-btn";
+          copyBtn.textContent = "📋 Copiar enlace";
+          copyBtn.setAttribute('aria-label','Copiar enlace de descarga');
+          copyBtn.onclick = async () => {
             try {
-              // ejemplo público: tikwm (puede cambiar con el tiempo)
-              const apiURL = `https://www.tikwm.com/api/?url=${encodeURIComponent(url)}`;
-              const res = await fetch(apiURL);
-              const data = await res.json();
-              if (data && data.data && data.data.play) {
-                finalData = { source: 'tikwm', url: data.data.play };
-              } else if (data && data.play) {
-                finalData = { source: 'tikwm-legacy', url: data.play };
-              }
+              await navigator.clipboard.writeText(data.video);
+              copyBtn.textContent = "✅ Copiado!";
+              copyBtn.style.transform = 'scale(1.2)';
+              setTimeout(() => copyBtn.style.transform = 'scale(1)', 200);
+              showToast('✅ Enlace copiado!');
+              setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
             } catch (err) {
-              console.warn('Fallback TikTok API fallo', err);
+              showToast('No se pudo copiar (permiso denegado)', false);
             }
-          }
+          };
 
-          // Fin: entregar resultado
-          setLoading(false);
-          if (finalData && finalData.url) {
-            status.style.color = "#0f0";
-            status.innerHTML = `✅ Video listo. <a href="${finalData.url}" target="_blank" rel="noopener" class="download-link">Haz clic aquí para descargar</a>`;
-            // añadir botón copiar
-            addCopyButton(finalData.url);
-            showToast('Descarga lista ✅');
-          } else {
-            status.style.color = "#ff3333";
-            status.textContent = "❌ No se pudo obtener el video de TikTok. Intenta con otro enlace.";
-            showToast('No se pudo obtener el video', false);
-          }
-
-        } else if (isFB) {
-          // Facebook: intento directo con API externa conocida
-          setLoading(true, 'Conectando con Facebook...');
-          // Intentar API pública
-          let fbResult = null;
-          try {
-            const apiURL = `https://api.fdownloader.app/api/facebook?url=${encodeURIComponent(url)}`;
-            const res = await fetch(apiURL);
-            const data = await res.json();
-            if (data?.success && data?.data && data.data[0]?.url) {
-              fbResult = data.data[0].url;
-            }
-          } catch (err) {
-            console.warn('Facebook API externa fallo', err);
-          }
-
-          // Si no hay resultado, intentar tu backend /api/facebook (por si implementaste)
-          if (!fbResult) {
-            try {
-              const resp = await fetch(`/api/facebook?url=${encodeURIComponent(url)}`, { method: 'GET', cache: 'no-store' });
-              const ct = resp.headers.get('content-type') || '';
-              if (ct.includes('application/json')) {
-                const j = await resp.json();
-                if (j?.video) fbResult = j.video;
-              }
-            } catch (e) {
-              console.warn('/api/facebook fallo o no existe', e);
-            }
-          }
-
-          setLoading(false);
-          if (fbResult) {
-            status.style.color = "#0f0";
-            status.innerHTML = `✅ Video listo. <a href="${fbResult}" target="_blank" rel="noopener" class="download-link">Descargar video de Facebook</a>`;
-            addCopyButton(fbResult);
-            showToast('Descarga lista ✅');
-          } else {
-            status.style.color = "#ff3333";
-            status.textContent = "❌ No se pudo obtener el video de Facebook. Intenta con otro enlace.";
-            showToast('No se pudo obtener el video', false);
-          }
-
+          // Limpiar status antes de insertar
+          status.innerHTML = '';
+          status.appendChild(downloadLink);
+          status.appendChild(copyBtn);
+          // Focus en el enlace para accesibilidad
+          downloadLink.focus();
+        } else {
+          status.style.color = "#ff3333";
+          status.textContent = "❌ No se pudo obtener el video. Verifica el enlace o intenta otro video.";
+          showToast('No se pudo obtener el video', false);
         }
       } catch (error) {
-        console.error('Error general en descarga:', error);
-        setLoading(false);
+        loading.style.display = "none";
+        loading.setAttribute('aria-hidden','true');
         status.style.color = "#ff3333";
-        status.textContent = "⚠️ Error al conectar con el servidor. Intenta de nuevo.";
+        status.textContent = "⚠️ Error al conectar con el servidor.";
+        // Log para desarrollo (no mostrar al usuario en producción)
+        console.error('Error fetch /api/download:', error);
         showToast('Error de conexión', false);
-      } finally {
-        btnLabel.textContent = 'Descargar';
-        downloadBtn.disabled = false;
-        setLoading(false);
       }
     });
 
-    // Añade botón copiar al lado del link (si no existe)
-    function addCopyButton(linkUrl) {
-      // si ya existe copy btn, no reinsertar
-      const existing = document.querySelector('.copy-btn');
-      if (existing) existing.remove();
-
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'copy-btn';
-      copyBtn.textContent = '📋 Copiar enlace';
-      copyBtn.setAttribute('aria-label','Copiar enlace de descarga');
-      copyBtn.onclick = async () => {
-        try {
-          await navigator.clipboard.writeText(linkUrl);
-          copyBtn.textContent = '✅ Copiado!';
-          showToast('Enlace copiado ✅');
-          setTimeout(() => copyBtn.textContent = '📋 Copiar enlace', 1800);
-        } catch (err) {
-          showToast('No se pudo copiar (permiso denegado)', false);
-        }
-      };
-
-      // anexarlo al status
-      const statusEl = document.getElementById('status');
-      statusEl.appendChild(copyBtn);
-      copyBtn.focus();
-    }
-
-    // Mensaje si la API tarda mucho (mejora UX, sin bloquear)
-    let longWaitTimer = null;
-    (function watchLongRequests(){
-      const obs = new MutationObserver(() => {
-        // si se muestra loading, arrancar timer
-        if (loading.style.display !== 'none') {
-          if (longWaitTimer) clearTimeout(longWaitTimer);
-          longWaitTimer = setTimeout(()=> {
-            showToast('Si tarda mucho, intenta con otro enlace o recarga la página', false);
-          }, 25000);
-        } else {
-          if (longWaitTimer) { clearTimeout(longWaitTimer); longWaitTimer = null; }
-        }
-      });
-      obs.observe(loading, { attributes: true, attributeFilter: ['style'] });
-    })();
-
-    // Mejor experiencia: si el usuario pega una URL detectamos y cambiamos placeholder (sin forzar)
-    urlInput.addEventListener('input', () => {
-      urlInput.classList.remove('error');
-    });
-
-    // Inicial: si hay texto en la query (por ejemplo ?u=...), rellenar el input
-    (function autofillFromQuery(){
-      try {
-        const params = new URLSearchParams(location.search);
-        const u = params.get('u') || params.get('url');
-        if (u) urlInput.value = u;
-      } catch (e) { /* no romper si URL inválida */ }
-    })();
+    // Mejor experiencia: si la API tarda, mostrar mensaje de tiempo límite
+    let lastInteraction = Date.now();
+    setInterval(() => {
+      if (loading.style.display !== 'none' && Date.now() - lastInteraction > 25000) {
+        // si lleva más de 25s mostrando loading, avisar al usuario
+        showToast('Si tarda, prueba de nuevo o intenta otro video', false);
+        lastInteraction = Date.now();
+      }
+    }, 8000);
 
   </script>
 
@@ -692,7 +582,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </body>
 </html>
-
-
-
 
