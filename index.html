@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Google Tag Manager -->
@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TTMedia - Descarga videos de TikTok sin marca de agua</title>
+  <title>TTMedia - Descarga videos de TikTok y Facebook sin marca de agua</title>
 
   <!-- Ads: mantener tal cual pero optimizar carga -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4121538816621592"
@@ -28,24 +28,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta http-equiv="x-ua-compatible" content="IE=edge">
 
   <!-- 🌐 SEO -->
-  <meta name="description" content="Descarga videos de TikTok sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.">
-  <meta name="keywords" content="descargar tiktok sin marca de agua, descargar videos tiktok, ttmedia, tiktok downloader, videos tiktok gratis, sin marca de agua">
+  <meta name="description" content="Descarga videos de TikTok y Facebook sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.">
+  <meta name="keywords" content="descargar tiktok sin marca de agua, descargar facebook videos, ttmedia, tiktok downloader, facebook downloader, videos gratis">
   <meta name="author" content="Gerardo Suarez">
   <meta name="theme-color" content="#111111">
 
     <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ttmedia.vercel.app/">
-  <meta property="og:title" content="TTMedia - Descarga videos de TikTok sin marca de agua">
-  <meta property="og:description" content="Descarga fácilmente videos de TikTok sin marca de agua desde PC o celular. Rápido, gratis y sin registro.">
+  <meta property="og:title" content="TTMedia - Descarga videos de TikTok y Facebook sin marca de agua">
+  <meta property="og:description" content="Descarga fácilmente videos de TikTok y Facebook sin marca de agua desde PC o celular. Rápido, gratis y sin registro.">
   <meta property="og:image" content="https://ttmedia.vercel.app/ttmedia-preview.png">
   <meta property="og:locale" content="es_ES">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://ttmedia.vercel.app/">
-  <meta name="twitter:title" content="TTMedia - Descarga videos de TikTok sin marca de agua">
-  <meta name="twitter:description" content="Descarga fácilmente videos de TikTok sin marca de agua desde PC o celular.">
+  <meta name="twitter:title" content="TTMedia - Descarga videos de TikTok y Facebook sin marca de agua">
+  <meta name="twitter:description" content="Descarga fácilmente videos de TikTok y Facebook sin marca de agua desde PC o celular.">
   <meta name="twitter:image" content="https://ttmedia.vercel.app/ttmedia-preview.png">
 
   <!-- Favicon -->
@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "name": "TTMedia",
     "url": "https://ttmedia.vercel.app",
     "logo": "https://ttmedia.vercel.app/logo.png",
-    "description": "Descarga videos de TikTok sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.",
+    "description": "Descarga videos de TikTok y Facebook sin marca de agua gratis y rápido con TTMedia. Compatible con todos los dispositivos. Sin apps ni registros.",
     "applicationCategory": "VideoDownloader",
     "operatingSystem": "Web",
     "publisher": {
@@ -73,6 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* TODOS tus estilos actuales se mantienen */
     :root{
       --bg: #000;
       --panel: #111;
@@ -97,27 +98,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Skip link para accesibilidad */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus {
-      left: 10px;
-      top: 10px;
-      width: auto;
-      height: auto;
-      background: #fff;
-      color: #000;
-      padding: 8px 12px;
-      border-radius: 4px;
-      z-index: 9999;
-      text-decoration: none;
-    }
+    /* Skip link */
+    .skip-link { position: absolute; left: -999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { left: 10px; top: 10px; width: auto; height: auto; background: #fff; color: #000; padding: 8px 12px; border-radius: 4px; z-index: 9999; text-decoration: none; }
 
     header {
       width: 100%;
@@ -135,29 +118,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       z-index: 50;
     }
 
-    header .logo {
-      font-size: 1.8em;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
+    header .logo { font-size: 1.8em; animation: glow 2s ease-in-out infinite alternate; }
+    @keyframes glow { from { text-shadow: 0 0 5px #ff1a1a; } to { text-shadow: 0 0 20px var(--accent); } }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #ff1a1a; }
-      to { text-shadow: 0 0 20px var(--accent); }
-    }
+    nav a { color: white; text-decoration: none; margin-left: 20px; transition: color 0.3s, text-shadow 0.3s; }
+    nav a:hover { color: var(--cyan); text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa; }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa;
-    }
-
-   main {
+    main {
       text-align: center;
       background-color: var(--panel);
       padding: 40px 20px;
@@ -186,11 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     input[type="text"]::placeholder { color: #999; opacity: 0.9; }
-
-    input[type="text"].error {
-      outline: 2px solid rgba(255,50,50,0.25);
-      box-shadow: 0 0 8px rgba(255,50,50,0.06);
-    }
+    input[type="text"].error { outline: 2px solid rgba(255,50,50,0.25); box-shadow: 0 0 8px rgba(255,50,50,0.06); }
 
     button {
       width: 100%;
@@ -215,19 +178,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: linear-gradient(145deg, #ff1a1a, #ff4c4c);
     }
 
-    .download-link {
-      display: block;
-      margin-top: 10px;
-      color: var(--green);
-      font-weight: 600;
-      transition: color 0.3s, text-shadow 0.3s;
-      word-break: break-all;
-    }
-
-    .download-link:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa;
-    }
+    .download-link { display: block; margin-top: 10px; color: var(--green); font-weight: 600; transition: color 0.3s, text-shadow 0.3s; word-break: break-all; }
+    .download-link:hover { color: var(--cyan); text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa; }
 
     .copy-btn {
       background-color: #333;
@@ -241,101 +193,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: 1px solid rgba(255,255,255,0.04);
     }
 
-    .copy-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 15px rgba(0,255,255,0.12);
-      background: linear-gradient(45deg, #0ff, #0aa);
-      color: #000;
-    }
+    .copy-btn:hover { transform: scale(1.08); box-shadow: 0 0 15px rgba(0,255,255,0.12); background: linear-gradient(45deg, #0ff, #0aa); color: #000; }
 
-    #status {
-      margin-top: 20px;
-      font-size: 0.95em;
-    }
+    #status { margin-top: 20px; font-size: 0.95em; }
 
-    .loading {
-      border: 4px solid rgba(255,255,255,0.08);
-      border-top: 4px solid var(--accent-2);
-      border-right: 4px solid var(--accent);
-      border-bottom: 4px solid var(--accent-2);
-      border-left: 4px solid rgba(255,0,0,0.06);
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      margin: 15px auto;
-      animation: spin 1s linear infinite;
-    }
-
+    .loading { border: 4px solid rgba(255,255,255,0.08); border-top: 4px solid var(--accent-2); border-right: 4px solid var(--accent); border-bottom: 4px solid var(--accent-2); border-left: 4px solid rgba(255,0,0,0.06); border-radius: 50%; width: 35px; height: 35px; margin: 15px auto; animation: spin 1s linear infinite; }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-    footer {
-      margin: 50px 0 30px 0;
-      color: var(--muted);
-      font-size: 0.85em;
-      text-align: center;
-      width: 100%;
-      max-width: var(--max-width);
-      padding: 10px 20px;
-      box-sizing: border-box;
-    }
+    footer { margin: 50px 0 30px 0; color: var(--muted); font-size: 0.85em; text-align: center; width: 100%; max-width: var(--max-width); padding: 10px 20px; box-sizing: border-box; }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 5px; transition: color 0.3s, text-shadow 0.3s; }
+    footer a:hover { color: var(--cyan); text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa; }
 
-    footer a {
-      color: var(--muted);
-      text-decoration: none;
-      margin: 0 5px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    footer a:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan), 0 0 20px #0aa;
-    }
-
-    section.info {
-      background-color: var(--panel);
-      margin: 60px auto;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: var(--max-width);
-      line-height: 1.6em;
-      text-align: left;
-      color: #ccc;
-      box-sizing: border-box;
-    }
-
+    section.info { background-color: var(--panel); margin: 60px auto; padding: 30px; border-radius: 15px; max-width: var(--max-width); line-height: 1.6em; text-align: left; color: #ccc; box-sizing: border-box; }
     section.info h3 { color: var(--accent); margin-bottom: 10px; }
     section.info ol { padding-left: 20px; }
     section.info ul { padding-left: 20px; }
 
-    /* Toast notification */
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--green);
-      color: #000;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-weight: 600;
-      box-shadow: 0 0 15px rgba(0,255,0,0.18);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-      z-index: 1000;
-    }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--green); color: #000; padding: 12px 25px; border-radius: 25px; font-weight: 600; box-shadow: 0 0 15px rgba(0,255,0,0.18); opacity: 0; pointer-events: none; transition: opacity 0.5s ease; z-index: 1000; }
+    .toast.show { opacity: 1; pointer-events: auto; }
 
-    .toast.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Responsive */
-    @media (min-width: 900px){
-      main { max-width: 600px; }
-      header { padding: 20px 60px; }
-      nav a { margin-left: 28px; }
-    }
+    @media (min-width: 900px){ main { max-width: 600px; } header { padding: 20px 60px; } nav a { margin-left: 28px; } }
   </style>
 </head>
 <body>
@@ -357,42 +234,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Main -->
   <main id="maincontent" role="main" aria-label="Área principal de descarga">
-    <h2>Descarga videos de TikTok sin marca de agua</h2>
+    <h2>Descarga videos de TikTok y Facebook sin marca de agua</h2>
     <p style="color: gray; font-size: 0.9em;">Pega el enlace del video aquí 👇</p>
 
-    <!-- Etiqueta visible para accesibilidad -->
-    <label for="url" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">Enlace del video de TikTok</label>
-    <input type="text" id="url" placeholder="https://www.tiktok.com/@usuario/video/..." aria-label="URL del video de TikTok">
+    <label for="url" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">Enlace del video de TikTok o Facebook</label>
+    <input type="text" id="url" placeholder="https://www.tiktok.com/... o https://www.facebook.com/..." aria-label="URL del video">
     <button id="downloadBtn" aria-live="polite" aria-controls="status">Descargar</button>
 
     <div id="loading" class="loading" style="display:none;" role="status" aria-hidden="true" aria-label="Cargando"></div>
     <p id="status" aria-live="polite" role="status"></p>
   </main>
 
-  <!-- 📰 Contenido adicional para SEO -->
+  <!-- Info y SEO -->
   <section class="info" aria-label="Información sobre TTMedia">
     <h3>¿Qué es TTMedia?</h3>
-    <p><strong>TTMedia</strong> es una herramienta gratuita en línea que permite descargar videos de TikTok sin marca de agua de forma rápida, segura y sin necesidad de instalar aplicaciones. Ideal para creadores de contenido, editores y usuarios que desean guardar sus videos favoritos.</p>
-
-    <h3>¿Cómo descargar videos de TikTok sin marca de agua?</h3>
-    <ol>
-      <li>Abre TikTok y copia el enlace del video que quieras descargar.</li>
-      <li>Pega el enlace en el cuadro de arriba.</li>
-      <li>Haz clic en <strong>“Descargar”</strong> y espera unos segundos.</li>
-      <li>Haz clic en el enlace verde para guardar el video sin marca de agua.</li>
-    </ol>
-
-    <h3>Ventajas de usar TTMedia</h3>
-    <ul>
-      <li>✅ Descargas sin marca de agua.</li>
-      <li>🚀 Velocidad de descarga instantánea.</li>
-      <li>📱 Compatible con celular, PC y tablet.</li>
-      <li>💸 100% gratis, sin registro.</li>
-    </ul>
-
-    <h3>Preguntas frecuentes</h3>
-    <p><strong>¿Funciona en todos los dispositivos?</strong><br>Sí, TTMedia funciona desde cualquier navegador (Google Chrome, Safari, Opera, Edge, etc.)</p>
-    <p><strong>¿Los videos se guardan en el servidor?</strong><br>No, las descargas son directas desde TikTok. No almacenamos ningún contenido.</p>
+    <p><strong>TTMedia</strong> es una herramienta gratuita que permite descargar videos de TikTok y Facebook sin marca de agua de forma rápida y segura. Ideal para creadores de contenido, editores y usuarios que desean guardar sus videos favoritos.</p>
   </section>
 
   <!-- Footer -->
@@ -413,173 +269,70 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const loading = document.getElementById('loading');
     const urlInput = document.getElementById('url');
 
-    // Función para mostrar toast
     function showToast(message, success = true) {
       let toast = document.createElement('div');
       toast.className = 'toast';
       toast.textContent = message;
       document.body.appendChild(toast);
-      // For accessibility, set role and aria-live
       toast.setAttribute('role','status');
       toast.setAttribute('aria-live','polite');
-
       setTimeout(() => toast.classList.add('show'), 100);
       setTimeout(() => {
         toast.classList.remove('show');
-        setTimeout(() => {
-          if (toast && toast.parentNode) toast.parentNode.removeChild(toast);
-        }, 500);
+        setTimeout(() => { if (toast && toast.parentNode) toast.parentNode.removeChild(toast); }, 500);
       }, 2500);
     }
 
-    // Validación simple de URL TikTok
-    function isValidTikTokUrl(u) {
+    function isValidMediaUrl(u) {
       try {
         const parsed = new URL(u);
-        // dominio TikTok principal y variantes
         const host = parsed.hostname.toLowerCase();
-        return host.includes('tiktok.com') || host.includes('v.douyin.com') || host.includes('vm.tiktok.com');
-      } catch(e) {
-        return false;
-      }
+        return host.includes('tiktok.com') || host.includes('vm.tiktok.com') || host.includes('facebook.com') || host.includes('fb.watch') || host.includes('m.facebook.com');
+      } catch(e){ return false; }
     }
 
-    // Manejar Enter en el input
-    urlInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        downloadBtn.click();
-      }
-    });
+    urlInput.addEventListener('keydown', (e) => { if(e.key==='Enter') downloadBtn.click(); });
 
-    // Botón Descargar
     downloadBtn.addEventListener('click', async () => {
       const url = urlInput.value.trim();
-      // Resetear estado UI
-      status.innerHTML = '';
-      urlInput.classList.remove('error');
+      status.innerHTML = ''; urlInput.classList.remove('error');
 
-      if (!url) {
-        status.style.color = "#ff3333";
-        status.textContent = "⚠️ Ingresa un enlace válido de TikTok.";
-        urlInput.classList.add('error');
-        showToast('Ingresa un enlace válido');
-        return;
-      }
+      if(!url) { status.style.color="#ff3333"; status.textContent="⚠️ Ingresa un enlace válido."; urlInput.classList.add('error'); showToast('Ingresa un enlace válido'); return; }
+      if(!isValidMediaUrl(url)) { status.style.color="#ff3333"; status.textContent="⚠️ URL no válida."; urlInput.classList.add('error'); showToast('URL no válida'); return; }
 
-      if (!isValidTikTokUrl(url)) {
-        status.style.color = "#ff3333";
-        status.textContent = "⚠️ Parece que no es una URL de TikTok. Verifica el enlace.";
-        urlInput.classList.add('error');
-        showToast('URL no válida');
-        return;
-      }
-
-      loading.style.display = "block";
-      loading.setAttribute('aria-hidden','false');
-      status.style.color = "#fff";
-      status.textContent = "Procesando el video... 🔄";
+      loading.style.display="block"; loading.setAttribute('aria-hidden','false'); status.style.color="#fff"; status.textContent="Procesando el video... 🔄";
 
       try {
-        // Llamada al backend (mantener la ruta que ya usas)
-        const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json'
-          },
-          // no-cache para intentar obtener datos frescos
-          cache: 'no-store'
-        });
-
-        // mejorar manejo de respuesta no-JSON
-        const contentType = response.headers.get('content-type') || '';
+        const response = await fetch(`/api/download?url=${encodeURIComponent(url)}`, { method:'GET', headers:{'Accept':'application/json'}, cache:'no-store' });
+        const contentType = response.headers.get('content-type')||'';
         let data;
-        if (contentType.includes('application/json')) {
-          data = await response.json();
-        } else {
-          // si no es JSON, tratar como texto para mostrar posible error
-          const txt = await response.text();
-          throw new Error('Respuesta inesperada del servidor: ' + txt);
-        }
+        if(contentType.includes('application/json')) data = await response.json();
+        else { const txt = await response.text(); throw new Error('Respuesta inesperada: '+txt); }
 
-        loading.style.display = "none";
-        loading.setAttribute('aria-hidden','true');
+        loading.style.display="none"; loading.setAttribute('aria-hidden','true');
 
-        if (data?.video) {
-          status.style.color = "#0f0";
-          status.innerHTML = "✅ Video listo para descargar.";
-
-          // Enlace de descarga
+        if(data?.video) {
+          status.style.color="#0f0"; status.innerHTML="✅ Video listo para descargar.";
           const downloadLink = document.createElement("a");
-          downloadLink.href = data.video;
-          downloadLink.target = "_blank";
-          downloadLink.rel = "noopener noreferrer";
-          downloadLink.className = "download-link";
-          downloadLink.textContent = "Haz clic aquí para descargar";
-          downloadLink.setAttribute('aria-label','Enlace para descargar el video sin marca de agua');
+          downloadLink.href = data.video; downloadLink.target="_blank"; downloadLink.rel="noopener noreferrer"; downloadLink.className="download-link"; downloadLink.textContent="Haz clic aquí para descargar"; downloadLink.setAttribute('aria-label','Enlace para descargar el video');
 
-          // Botón copiar
           const copyBtn = document.createElement("button");
-          copyBtn.className = "copy-btn";
-          copyBtn.textContent = "📋 Copiar enlace";
-          copyBtn.setAttribute('aria-label','Copiar enlace de descarga');
-          copyBtn.onclick = async () => {
-            try {
-              await navigator.clipboard.writeText(data.video);
-              copyBtn.textContent = "✅ Copiado!";
-              copyBtn.style.transform = 'scale(1.2)';
-              setTimeout(() => copyBtn.style.transform = 'scale(1)', 200);
-              showToast('✅ Enlace copiado!');
-              setTimeout(() => copyBtn.textContent = "📋 Copiar enlace", 2000);
-            } catch (err) {
-              showToast('No se pudo copiar (permiso denegado)', false);
-            }
-          };
+          copyBtn.className="copy-btn"; copyBtn.textContent="📋 Copiar enlace"; copyBtn.setAttribute('aria-label','Copiar enlace de descarga');
+          copyBtn.onclick = async ()=>{ try{ await navigator.clipboard.writeText(data.video); copyBtn.textContent="✅ Copiado!"; copyBtn.style.transform='scale(1.2)'; setTimeout(()=>copyBtn.style.transform='scale(1)',200); showToast('✅ Enlace copiado!'); setTimeout(()=>copyBtn.textContent="📋 Copiar enlace",2000);} catch(e){showToast('No se pudo copiar', false);}};
 
-          // Limpiar status antes de insertar
-          status.innerHTML = '';
-          status.appendChild(downloadLink);
-          status.appendChild(copyBtn);
-          // Focus en el enlace para accesibilidad
-          downloadLink.focus();
-        } else {
-          status.style.color = "#ff3333";
-          status.textContent = "❌ No se pudo obtener el video. Verifica el enlace o intenta otro video.";
-          showToast('No se pudo obtener el video', false);
-        }
-      } catch (error) {
-        loading.style.display = "none";
-        loading.setAttribute('aria-hidden','true');
-        status.style.color = "#ff3333";
-        status.textContent = "⚠️ Error al conectar con el servidor.";
-        // Log para desarrollo (no mostrar al usuario en producción)
-        console.error('Error fetch /api/download:', error);
-        showToast('Error de conexión', false);
-      }
+          status.innerHTML=''; status.appendChild(downloadLink); status.appendChild(copyBtn); downloadLink.focus();
+        } else { status.style.color="#ff3333"; status.textContent="❌ No se pudo obtener el video."; showToast('No se pudo obtener el video', false); }
+      } catch(error){ loading.style.display="none"; loading.setAttribute('aria-hidden','true'); status.style.color="#ff3333"; status.textContent="⚠️ Error al conectar con el servidor."; console.error(error); showToast('Error de conexión', false); }
     });
 
-    // Mejor experiencia: si la API tarda, mostrar mensaje de tiempo límite
-    let lastInteraction = Date.now();
-    setInterval(() => {
-      if (loading.style.display !== 'none' && Date.now() - lastInteraction > 25000) {
-        // si lleva más de 25s mostrando loading, avisar al usuario
-        showToast('Si tarda, prueba de nuevo o intenta otro video', false);
-        lastInteraction = Date.now();
-      }
-    }, 8000);
-
+    let lastInteraction=Date.now();
+    setInterval(()=>{ if(loading.style.display!=='none' && Date.now()-lastInteraction>25000){ showToast('Si tarda, prueba de nuevo o intenta otro video', false); lastInteraction=Date.now(); } },8000);
   </script>
 
-  <!-- Noscript: mensaje para usuarios sin JS -->
   <noscript>
-    <style>
-      .no-js-warning { background:#fff;color:#000;padding:12px;border-radius:8px;max-width:900px;margin:20px auto; text-align:center; }
-    </style>
-    <div class="no-js-warning" role="alert">
-      ⚠️ Parece que JavaScript está desactivado en tu navegador. Para usar TTMedia necesitas activar JavaScript.
-    </div>
+    <style>.no-js-warning { background:#fff;color:#000;padding:12px;border-radius:8px;max-width:900px;margin:20px auto; text-align:center; }</style>
+    <div class="no-js-warning" role="alert">⚠️ Parece que JavaScript está desactivado. Activa JS para usar TTMedia.</div>
   </noscript>
 
 </body>
 </html>
-
